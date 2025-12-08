@@ -1,0 +1,206 @@
+@forward 'colors';
+@forward 'normalize';
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Roboto-Regular'),
+    url('/fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: bold;
+  font-weight: 700;
+  src:
+    local('Roboto-Bold'),
+    url('/fonts/Roboto-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Questrial;
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Questrial-Regular'),
+    url('/fonts/Questrial-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Satoshi;
+  font-style: light;
+  font-weight: 300;
+  src:
+    local('Satoshi-Light'),
+    url('/fonts/Satoshi-Light.otf') format('truetype');
+}
+
+@font-face {
+  font-family: Satoshi;
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Satoshi-Regular'),
+    url('/fonts/Satoshi-Regular.otf') format('truetype');
+}
+
+@font-face {
+  font-family: Satoshi;
+  font-style: medium;
+  font-weight: 500;
+  src:
+    local('Satoshi-Medium'),
+    url('/fonts/Satoshi-Medium.otf') format('truetype');
+}
+
+@font-face {
+  font-family: Satoshi;
+  font-style: bold;
+  font-weight: 700;
+  src:
+    local('Satoshi-Bold'),
+    url('/fonts/Satoshi-Bold.otf') format('truetype');
+}
+
+/* scrollbar - Estilo unificado gris para toda la aplicación */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-moz-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-moz-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color-300);
+  border-radius: 3px;
+}
+
+::-moz-scrollbar-thumb {
+  background-color: var(--primary-color-300);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color-400);
+}
+
+::-moz-scrollbar-thumb:hover {
+  background-color: var(--primary-color-400);
+}
+
+body {
+  transition: background, color;
+  transition-duration: 500ms;
+  transition-timing-function: linear;
+
+  // background: #ffffffd9;
+  background-color: var(--primary-color-200);
+  color: var(--tertiary-color-500);
+}
+
+body[data-theme='dark'] {
+  background: radial-gradient(
+    85% 158.68% at 12.45% 77.25%,
+    var(--primary-color-100) 41.43%,
+    var(--primary-color-50) 100%
+  );
+  // background: -moz-linear-gradient(150deg, #19222cfc 10%, #1f2936 52%, #1f2934 91%);
+  // background: -webkit-linear-gradient(150deg, #19222cfc 10%, #1f2936 52%, #1f2934 91%);
+  // background: linear-gradient(150deg, #19222cfc 10%, #1f2936 52%, #1f2934 91%);
+  color: var(--tertiary-color-200);
+}
+
+#root {
+  height: 100dvh;
+  max-width: var(--max-w-layout);
+  margin: 0 auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  font-family: 'Montserrat';
+}
+
+h2 {
+  color: var(--tertiary-color-450);
+  font-size: 1.3rem;
+  line-height: 1.125em;
+}
+
+h3 {
+  color: var(--tertiary-color-300);
+}
+
+a,
+select {
+  cursor: pointer;
+}
+
+select {
+  color: var(--tertiary-color-400);
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  outline: none;
+
+  svg {
+    pointer-events: none;
+  }
+
+  &.disabled {
+    outline: none;
+    cursor: not-allowed !important;
+    color: var(--tertiary-color-200) !important;
+    background-color: var(--primary-color-100) !important;
+
+    &:hover {
+      cursor: not-allowed !important;
+      color: var(--tertiary-color-200) !important;
+      background-color: var(--primary-color-100) !important;
+    }
+
+    &:active {
+      outline: none;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.codefend-checkbox {
+  color: inherit !important;
+  padding: 0;
+  --primary-hover-color: #c92222;
+  --checkbox-diameter: 17.5px;
+  --checkbox-border-radius: 5px;
+  --checkbox-border-color: var(--tertiary-color-50);
+  --checkbox-border-width: 1px;
+  --checkbox-border-style: solid;
+  --checkmark-size: 1.2;
+}
+
+[data-theme='dark'] {
+  .codefend-radio {
+    --radio-bg: linear-gradient(to right bottom, #f07878, #9e1f1f);
+    --radio-bg-before: linear-gradient(to right bottom, #18191a, #505050);
+  }
+}

@@ -1,0 +1,80 @@
+/* Color Scheme Light */
+:root {
+  // --sidebar-width: 240px; // Movido a sidebar-consolidated.scss
+  --text-large: 18px;
+  --text-small: 12px;
+  --nav-height: 50px;
+  --padding-general: 0 3dvw;
+  --padding-top-sections-c: 50px;
+  --right-pane-shadow: 0 0 30px 0 rgb(83 83 83 / 10%);
+  --brd-radius: 6px;
+  --max-w-layout: 2000px;
+  --card-space: 12px;
+  --max-height-layout: min(calc(100dvh - 10px), 1016px);
+  --absolute-bars-left: 10px;
+  --codefend-color-red: #ff3939;
+}
+
+body[data-theme='light'] {
+  --primary-color: #fff;
+  --primary-color-50: #fdfdfd;
+  --primary-color-100: #fcfafa;
+  --primary-color-200: #f7f7f7;
+  --primary-color-300: #e5e5e5;
+  --primary-color-400: #f3f3f3;
+  --primary-color-500: #efefef;
+  --primary-color-600: #dbdbdb;
+
+  --secondary-color-mask: #ff0000;
+
+  --secondary-color: #ff6363;
+  --secondary-color-50: #fe4e4e;
+  --secondary-color-100: #ff3939;
+  --secondary-color-150: #fd2727;
+  --secondary-color-200: #e84f4f;
+  --secondary-color-300: #cb2222;
+  --secondary-color-400: #942222;
+
+  --tertiary-color-50: #cfcfcf;
+  --tertiary-color-100: #afafaf;
+  --tertiary-color-200: #999999;
+  --tertiary-color-300: #666;
+  --tertiary-color-400: #3d3d3d;
+  --tertiary-color-450: #585858;
+  --tertiary-color-500: #222222;
+  --tertiary-color-600: #1a1a1a;
+  --tertiary-color-700: #000;
+}
+
+body[data-theme='dark'] {
+  --primary-color-mask: #141e29de;
+  --primary-color: rgb(35 35 35 / 82%);
+  --primary-color-50: #191919;
+  --primary-color-100: #121212;
+  --primary-color-200: rgb(24 24 24 / 60%);
+  --primary-color-250: rgba(41, 41, 41, 0.85);
+  --primary-color-300: #161e28;
+  --primary-color-400: #131b24;
+  --primary-color-500: #121a23;
+  --primary-color-600: #0d141b;
+
+  --secondary-color-mask: #ff0000;
+
+  --secondary-color: #ff6471;
+  --secondary-color-50: #fe4e4e;
+  --secondary-color-100: #ff3939;
+  --secondary-color-200: #e84f4f;
+  --secondary-color-300: #cb2222;
+  --secondary-color-400: #942222;
+
+  --tertiary-color-50: #f7f7f7;
+  --tertiary-color-100: #e5e5e5;
+  --tertiary-color-200: #e0e0e0;
+  --tertiary-color-300: #efefef;
+  --tertiary-color-400: #cfcfcf;
+
+  --tertiary-color-500: #afafaf;
+  --tertiary-color-600: #999999;
+  --tertiary-color-700: #666;
+  --tertiary-color-800: #131313;
+}

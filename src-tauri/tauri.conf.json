@@ -1,0 +1,91 @@
+{
+	"$schema": "https://schema.tauri.app/config/2",
+	"productName": "Codefend Leaks",
+	"version": "../package.json",
+	"identifier": "codefend.leaks",
+	"app": {
+		"withGlobalTauri": true,
+		"windows": [
+			{
+				"fullscreen": false,
+				"height": 600,
+				"width": 800,
+				"resizable": true,
+				"title": "Codefend Leaks",
+				"visible": true,
+				"center": true,
+				"label": "main",
+				"dragDropEnabled": false,
+				"devtools": true
+			}
+		],
+		"security": {
+			"csp": null
+		}
+	},
+	"build": {
+		"beforeDevCommand": "bun dev",
+		"devUrl": "http://localhost:5173",
+		"beforeBuildCommand": "bun run build",
+		"frontendDist": "../dist"
+	},
+	"bundle": {
+		"active": true,
+		"targets": ["deb", "appimage", "nsis", "app", "dmg"],
+		"publisher": "Codefend LLC",
+		"copyright": "Copyright Notice 2025 Codefend LLC",
+		"category": "DeveloperTool",
+		"icon": [
+			"icons/32x32.png",
+			"icons/128x128.png",
+			"icons/128x128@2x.png",
+			"icons/icon.icns",
+			"icons/icon.ico"
+		],
+		"resources": [],
+		"externalBin": [],
+		"shortDescription": "Codefend Leaks",
+		"longDescription": "Codefend Leaks - Data Breach Detection & Intelligence Platform focused on SNS and INX modules",
+		"createUpdaterArtifacts": true,
+		"macOS": {
+			"minimumSystemVersion": "11",
+			"entitlements": null,
+			"exceptionDomain": "",
+			"frameworks": [],
+			"providerShortName": null,
+			"signingIdentity": null
+		},
+		"windows": {
+			"webviewInstallMode": { 
+				"type": "offlineInstaller",
+				"silent": true 
+			},
+			"certificateThumbprint": null,
+			"digestAlgorithm": "sha256",
+			"timestampUrl": ""
+		},
+		"linux": {
+			"deb": {
+				"depends": []
+			},
+			"appimage": {
+				"bundleMediaFramework": true
+			}
+		}
+	},
+	"plugins": {
+		"fs": {
+			"requireLiteralLeadingDot": false
+		},
+		"updater": {
+			"active": true,
+			"pubkey":"dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEQxRDdEODQyRjlBNDUxNzYKUldSMlVhVDVRdGpYMFV4Nkd5UmxXcnlsU05qUkVoVFZkNURDWlBFYmY0cWVwYmFpSEp4SXhIN2UK",
+			"endpoints": [
+				"https://raw.githubusercontent.com/codefen/codefend-leaks/update-latest-json/latest.json"
+			],
+			"windows": {
+				"installMode": "passive"
+			}
+		}
+	}
+}
