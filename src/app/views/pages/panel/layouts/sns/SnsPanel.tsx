@@ -5,12 +5,10 @@ import SnsSearchAndData from './components/SnsSearchAndData.tsx';
 import { useShowScreen } from '#commonHooks/useShowScreen.ts';
 import { usePreviousSearch } from '@moduleHooks/usePreviousSearch.ts';
 import {
-  useGlobalFastField,
   useGlobalFastFields,
 } from '@/app/views/context/AppContextProvider.tsx';
 import './Sns.scss';
 import { APP_EVENT_TYPE, USER_LOGGING_STATE } from '@interfaces/panel.ts';
-import Navbar from '@/app/views/components/navbar/Navbar';
 import { useMediaQuery } from 'usehooks-ts';
 
 const SnsPanel: FC = () => {
@@ -55,7 +53,6 @@ const SnsPanel: FC = () => {
         </section>
 
         <section className="right">
-          <Navbar />
           <SnsCardTitle
             arrow="none"
             title="Dataleaks search"

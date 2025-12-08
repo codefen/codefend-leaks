@@ -20,6 +20,9 @@
     "fs:allow-write-file",
     "fs:allow-exists",
     "fs:allow-appcache-write",
+    "cors-fetch:default",
+    "cors-fetch:allow-cors-request",
+    "opener:default",
     {
       "identifier": "fs:scope",
       "allow": [

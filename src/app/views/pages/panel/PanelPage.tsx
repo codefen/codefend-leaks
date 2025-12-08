@@ -10,7 +10,6 @@ import { EVENTS } from '@/app/constants/events.ts';
 import { useGlobalFastField } from '@/app/views/context/AppContextProvider.tsx';
 import { OrderV2 } from '@modals/index.ts';
 import { AxiosHttpService } from '@services/axiosHTTP.service.ts';
-export const Navbar = lazy(() => import('../../components/navbar/Navbar.tsx'));
 export const Sidebar = lazy(() => import('../../components/sidebar/Sidebar.tsx'));
 export const ErrorConnection = lazy(() => import('../../components/modals/ErrorConnection.tsx'));
 
