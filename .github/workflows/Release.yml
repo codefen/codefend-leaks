@@ -129,7 +129,7 @@ jobs:
           cat > latest.json << EOL
           {
             "version": "${package_version}",
-            "notes": "Codefend Panel ${package_version} release",
+            "notes": "Codefend Leaks ${package_version} release",
             "pub_date": "${pub_date}",
             "platforms": {
               "darwin-aarch64": {
