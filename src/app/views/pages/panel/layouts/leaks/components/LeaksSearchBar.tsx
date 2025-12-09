@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, type KeyboardEvent } from 'react';
 import { type LeaksSearchType } from '@/app/data/hooks/modules/leaks/useLeaks';
 
 interface LeaksSearchBarProps {
@@ -18,7 +18,7 @@ export const LeaksSearchBar: FC<LeaksSearchBarProps> = ({
   onSearch,
   isSearching,
 }) => {
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const handleKeyPress = (e: KeyboardEvent) => {
     if (e.key === 'Enter' && !isSearching) {
       onSearch();
     }

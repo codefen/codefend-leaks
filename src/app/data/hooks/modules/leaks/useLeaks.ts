@@ -11,6 +11,7 @@ import { APP_EVENT_TYPE } from '@interfaces/panel';
 import { mapIntelData } from '@utils/mapper';
 
 export type SearchType = 'email' | 'domain' | 'username' | 'password' | 'name' | 'hash' | 'ip';
+export type LeaksSearchType = 'all' | 'inx' | 'sns';
 
 interface SearchResult {
 	results: any[];

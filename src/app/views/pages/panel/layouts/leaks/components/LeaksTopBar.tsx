@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC, KeyboardEvent } from 'react';
 import { lazy } from 'react';
 import { ThemeChangerButton } from '@buttons/index';
 import { LogoutIcon } from '@icons';
@@ -14,7 +14,7 @@ interface LeaksTopBarProps {
 	isSearching: boolean;
 	remainingSearches: number | string;
 	onSearch: () => void;
-	onKeyPress: (e: React.KeyboardEvent) => void;
+	onKeyPress: (e: KeyboardEvent) => void;
 	onLogout: () => void;
 	activeButton: string | null;
 	onProxyClick: (id: string) => void;
