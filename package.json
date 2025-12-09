@@ -1,7 +1,7 @@
 {
 	"name": "codefend-leaks",
 	"private": true,
-	"version": "0.1.1",
+	"version": "0.2.0",
 	"description": "Data Leaks Detection & Intelligence Platform - Focused on SNS and INX modules",
 	"type": "module",
 	"scripts": {
