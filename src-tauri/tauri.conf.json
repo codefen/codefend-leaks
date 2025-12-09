@@ -79,7 +79,7 @@
 		},
 		"updater": {
 			"active": true,
-			"pubkey":"dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEQxRDdEODQyRjlBNDUxNzYKUldSMlVhVDVRdGpYMFV4Nkd5UmxXcnlsU05qUkVoVFZkNURDWlBFYmY0cWVwYmFpSEp4SXhIN2UK",
+			"pubkey":"dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDk5NkNFRUEwM0I0NDNFMzUKUldRMVBrUTdvTzVzbVlKT002b3JEZGNKc29MSzRMUHdKK2o0YkNWY3FwZTdIYWJwcXdGNjFvOVgK",
 			"endpoints": [
 				"https://raw.githubusercontent.com/codefen/codefend-leaks/update-latest-json/latest.json"
 			],
