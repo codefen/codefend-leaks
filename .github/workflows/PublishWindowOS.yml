@@ -712,7 +712,16 @@ jobs:
             Write-Host "`n📤 Subiendo: $($artifact.Name) ($([math]::Round($artifact.Length/1MB, 2)) MB)"
 
             try {
-              gh release upload $tag "$($artifact.FullName)" --repo $repo --clobber
+              $uploadOutput = gh release upload $tag "$($artifact.FullName)" --repo $repo --clobber 2>&1
+              if ($LASTEXITCODE -ne 0) {
+                Write-Error "❌ Error subiendo $($artifact.Name): $uploadOutput"
+                exit 1
+              }
+              if ($uploadOutput -match "release not found") {
+                Write-Error "❌ Release no encontrado: $tag"
+                Write-Error "Salida completa: $uploadOutput"
+                exit 1
+              }
               Write-Host "✅ Archivo subido exitosamente"
             } catch {
               Write-Error "❌ Error subiendo $($artifact.Name): $($_.Exception.Message)"
@@ -724,7 +733,16 @@ jobs:
             if (Test-Path $sigPath) {
               Write-Host "📤 Subiendo .sig: $(Split-Path $sigPath -Leaf)"
               try {
-                gh release upload $tag "$sigPath" --repo $repo --clobber
+                $sigUploadOutput = gh release upload $tag "$sigPath" --repo $repo --clobber 2>&1
+                if ($LASTEXITCODE -ne 0) {
+                  Write-Error "❌ Error subiendo firma: $sigUploadOutput"
+                  exit 1
+                }
+                if ($sigUploadOutput -match "release not found") {
+                  Write-Error "❌ Release no encontrado: $tag"
+                  Write-Error "Salida completa: $sigUploadOutput"
+                  exit 1
+                }
                 Write-Host "✅ Firma subida exitosamente"
               } catch {
                 Write-Error "❌ Error subiendo firma: $($_.Exception.Message)"
