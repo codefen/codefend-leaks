@@ -709,34 +709,12 @@ jobs:
           Write-Host "📦 Archivos a subir: $($artifacts.Count)"
 
           foreach ($artifact in $artifacts) {
-            Write-Host "`n📤 Procesando: $($artifact.Name) ($([math]::Round($artifact.Length/1MB, 2)) MB)"
+            Write-Host "`n📤 Subiendo: $($artifact.Name) ($([math]::Round($artifact.Length/1MB, 2)) MB)"
 
-            # Sanitizar nombre: reemplazar espacios con puntos
-            $sanitizedName = $artifact.Name -replace ' ', '.'
-            $sanitizedPath = Join-Path $artifact.Directory $sanitizedName
-
-            # Si el nombre cambió, crear copia con nombre sanitizado
-            if ($sanitizedName -ne $artifact.Name) {
-              Write-Host "   📝 Sanitizando nombre: $($artifact.Name) -> $sanitizedName"
-              Copy-Item -Path $artifact.FullName -Destination $sanitizedPath -Force
-
-              # También copiar el .sig si existe
-              $originalSigPath = "$($artifact.FullName).sig"
-              if (Test-Path $originalSigPath) {
-                $sanitizedSigPath = "$sanitizedPath.sig"
-                Copy-Item -Path $originalSigPath -Destination $sanitizedSigPath -Force
-                Write-Host "   📝 Sanitizando firma: $($artifact.Name).sig -> $sanitizedName.sig"
-              }
-            } else {
-              $sanitizedPath = $artifact.FullName
-            }
-
-            # Subir archivo sanitizado
-            Write-Host "📤 Subiendo: $sanitizedName"
             try {
-              $uploadOutput = gh release upload $tag "$sanitizedPath" --repo $repo --clobber 2>&1
+              $uploadOutput = gh release upload $tag "$($artifact.FullName)" --repo $repo --clobber 2>&1
               if ($LASTEXITCODE -ne 0) {
-                Write-Error "❌ Error subiendo $sanitizedName: $uploadOutput"
+                Write-Error "❌ Error subiendo $($artifact.Name): $uploadOutput"
                 exit 1
               }
               if ($uploadOutput -match "release not found") {
@@ -746,15 +724,14 @@ jobs:
               }
               Write-Host "✅ Archivo subido exitosamente"
             } catch {
-              Write-Error "❌ Error subiendo $sanitizedName: $($_.Exception.Message)"
+              Write-Error "❌ Error subiendo $($artifact.Name): $($_.Exception.Message)"
               exit 1
             }
 
             # Subir archivo .sig si existe
-            $sigPath = "$sanitizedPath.sig"
+            $sigPath = "$($artifact.FullName).sig"
             if (Test-Path $sigPath) {
-              $sigName = Split-Path $sigPath -Leaf
-              Write-Host "📤 Subiendo .sig: $sigName"
+              Write-Host "📤 Subiendo .sig: $(Split-Path $sigPath -Leaf)"
               try {
                 $sigUploadOutput = gh release upload $tag "$sigPath" --repo $repo --clobber 2>&1
                 if ($LASTEXITCODE -ne 0) {
@@ -772,7 +749,7 @@ jobs:
                 exit 1
               }
             } else {
-              Write-Warning "⚠️ No se encontró .sig para $sanitizedName"
+              Write-Warning "⚠️ No se encontró .sig para $($artifact.Name)"
             }
           }
 
@@ -835,16 +812,12 @@ jobs:
             exit 1
           }
 
-          # Sanitizar nombre del artefacto (reemplazar espacios con puntos)
-          $sanitizedName = $artifact.Name -replace ' ', '.'
-
-          # Exportar outputs con nombre sanitizado
+          # Exportar outputs
           echo "windows_x86_64_sig=$signature" >> $env:GITHUB_OUTPUT
-          echo "windows_x86_64_name=$sanitizedName" >> $env:GITHUB_OUTPUT
+          echo "windows_x86_64_name=$($artifact.Name)" >> $env:GITHUB_OUTPUT
 
           Write-Host "✅ Extracción completada:"
-          Write-Host "   📦 Package original: $($artifact.Name)"
-          Write-Host "   📦 Package sanitizado: $sanitizedName"
+          Write-Host "   📦 Package: $($artifact.Name)"
           Write-Host "   📝 Signature length: $($signature.Length) chars"
           Write-Host "   🔍 Signature preview: $($signature.Substring(0, [Math]::Min(50, $signature.Length)))..."
 
