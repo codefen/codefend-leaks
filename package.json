@@ -20,7 +20,7 @@
 	"dependencies": {
 		"@stripe/react-stripe-js": "3.7.0",
 		"@stripe/stripe-js": "7.3.1",
-		"@tauri-apps/api": "2.9.0",
+		"@tauri-apps/api": "2.9.1",
 		"@tauri-apps/plugin-dialog": "2.4.2",
 		"@tauri-apps/plugin-notification": "2.3.3",
 		"@tauri-apps/plugin-process": "2.3.1",

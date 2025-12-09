@@ -1,4 +1,4 @@
-import { useState, useEffect, type FC, useCallback } from 'react';
+import { useState, useEffect, type FC, useCallback, type KeyboardEvent } from 'react';
 import { useShowScreen } from '#commonHooks/useShowScreen';
 import { useLeaks } from '@/app/data/hooks/modules/leaks/useLeaks';
 import { useGlobalFastFields } from '@/app/views/context/AppContextProvider';
@@ -65,7 +65,7 @@ export const LeaksPanel: FC = () => {
 		await searchAll(searchQuery);
 	};
 
-	const handleKeyPress = (e: React.KeyboardEvent) => {
+	const handleKeyPress = (e: KeyboardEvent) => {
 		if (e.key === 'Enter' && !isSearching) {
 			handleSearch();
 		}
