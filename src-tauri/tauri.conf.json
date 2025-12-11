@@ -62,7 +62,17 @@
 			},
 			"certificateThumbprint": null,
 			"digestAlgorithm": "sha256",
-			"timestampUrl": ""
+			"timestampUrl": "",
+			"signCommand": {
+				"cmd": "powershell",
+				"args": [
+				  "-ExecutionPolicy",
+				  "Bypass", 
+				  "-File",
+				  "../scripts/sign-with-codesigntool.ps1",
+				  "%1"
+				]
+			  }
 		},
 		"linux": {
 			"deb": {
