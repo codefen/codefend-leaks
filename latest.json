@@ -1,0 +1,23 @@
+{
+  "version": "0.3.1",
+  "notes": "Codefend Leaks 0.3.1 release",
+  "pub_date": "2025-12-11T11:46:10Z",
+  "platforms": {
+    "darwin-aarch64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRMVBrUTdvTzVzbVF3U2lmSDgvR2UwL1ZqRWJCL2RpQmxwWW11bzh6bFZEV0ZnbHQrU04waGcrUXNSblZBQ1hsL3Brem96SlgvdStqajNhRkhJVW5ZR1R4ajBmNFlLa1FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzY1NDUzMzgxCWZpbGU6Q29kZWZlbmQgTGVha3MuYXBwLnRhci5negpPaW1JYnBOQTN0SjJYdjJqZ2t4UEIwbUVhbmw2NVZvWWRPYncrSzNaUlFRMTNZWGpuRE5EMnRNU05qZVVsVEp2WWJOMVBQZTI5L2pGWngwZkJQZExCQT09Cg==",
+      "url": "https://github.com/codefen/codefend-leaks/releases/download/codefend-leaks-v0.3.1/Codefend.Leaks.app.tar.gz"
+    },
+    "darwin-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRMVBrUTdvTzVzbWJiSWVkSWZwSk9POG9SUEhCK2tuSmNURWVkWENDc21teVhsWmc4Q0Z4OS9hNFdXREpoNlAzcTZROFJ5UGxwRGkxdmxQdXpDVWlxbWpldk42akhIQmcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzY1NDUzNTI2CWZpbGU6Q29kZWZlbmQgTGVha3MuYXBwLnRhci5negpxQ3hVMnIxMDQ0VjdVYzdxNjhzUUpVY1psSDg1ZTcyc2RITDRUTWFSeEJLOGxUVWRTeHRyUmV1bmxOSVhzQlJsTWRaTGdMWU9CWDJNYjY1SnRrTGNDUT09Cg==",
+      "url": "https://github.com/codefen/codefend-leaks/releases/download/codefend-leaks-v0.3.1/Codefend.Leaks.app.tar.gz"
+    },
+    "linux-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRMVBrUTdvTzVzbVNtOUdBQW5hbldxOG9HQ0VUOCtjc0NXaldzVmJlOXJqNGU3dHUvUklNS3VPZXZocFE4UzJMU2RwV2lsRWg4d1E0cklKVXNmbFFPaUtoUVFHVHZoNkFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzY1NDUzNDAyCWZpbGU6Q29kZWZlbmQgTGVha3NfMC4zLjFfYW1kNjQuQXBwSW1hZ2UKZ0hnU2wvSUpjVm5mUDdOZ2R0VUdZV0dBcEowVzdZSUFvMGpib2FXR29pQU5WbFFIbUxTRDdydVQ4Vm9QUmtrVGxXRHpaMmdJMmgvVlNkaGRHYWpiQ0E9PQo=",
+      "url": "https://github.com/codefen/codefend-leaks/releases/download/codefend-leaks-v0.3.1/Codefend.Leaks_0.3.1_amd64.AppImage"
+    },
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRMVBrUTdvTzVzbVFzTDFjeEhPQTlqUjJpSmhiQ2RlbkNMVWVhRXJkMDRIQzJ6T2JCVno2NFpnbUgzcThWeWI5SGViUXduZ25CcC9BRGMvYUo4Q2YzTTFHbHl1dUJISlFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzY1NDUzNDE5CWZpbGU6Q29kZWZlbmQgTGVha3NfMC4zLjFfeDY0X2VuLVVTLm1zaQo3S2xGSGEzZkQxRlVkN2I4UmI4VExjM0wzZHJIdnlTaGJCUjJyclNqSVZxazZjUE9rd1Y4dkZwMURwSzFTZCs0blJ1UTdaeHh6cVZGUFFSdW1Mb0ZEZz09Cg==",
+      "url": "https://github.com/codefen/codefend-leaks/releases/download/codefend-leaks-v0.3.1/Codefend.Leaks_0.3.1_x64_en-US.msi"
+    }
+  }
+}
