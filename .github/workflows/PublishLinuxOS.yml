@@ -213,7 +213,6 @@ jobs:
             echo "linux_x86_64_sig=" >> $GITHUB_OUTPUT
           fi
 
-
       - name: 🛡️ Attest build provenance
         uses: actions/attest-build-provenance@7668571508540a607bdfd90a87a560489fe372eb # v2.1.0
         with:
