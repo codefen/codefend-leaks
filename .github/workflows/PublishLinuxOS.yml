@@ -110,7 +110,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
-          TAURI_BUNDLE_IDENTIFIER: "anarch.ai"
+          TAURI_BUNDLE_IDENTIFIER: "codefend.leaks"
           TAURI_BUNDLE_VERSION: ${{ inputs.package_version }}
         with:
           releaseId: ${{ inputs.release_id }}
@@ -155,14 +155,14 @@ jobs:
           fi
           
           # Verificar DEB si existe
-          deb_path="src-tauri/target/release/bundle/deb/anarch-ai_${package_version}_amd64.deb"
+          deb_path="src-tauri/target/release/bundle/deb/codefend-leaks_${package_version}_amd64.deb"
           if [[ -f "$deb_path" ]]; then
             echo "✅ DEB package found: $deb_path"
             echo "   Size: $(du -h "$deb_path" | cut -f1)"
           fi
           
           # Verificar RPM si existe  
-          rpm_path="src-tauri/target/release/bundle/rpm/anarch-ai-${package_version}-1.x86_64.rpm"
+          rpm_path="src-tauri/target/release/bundle/rpm/codefend-leaks-${package_version}-1.x86_64.rpm"
           if [[ -f "$rpm_path" ]]; then
             echo "✅ RPM package found: $rpm_path"
             echo "   Size: $(du -h "$rpm_path" | cut -f1)"
